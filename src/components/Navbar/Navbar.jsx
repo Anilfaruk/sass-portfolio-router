@@ -1,33 +1,44 @@
 import React from "react";
 import "./Navbar.scss";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="index.html" class="nav__link">
-              Home
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="about.html" class="nav__link">
-              About Me
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="projects.html" class="nav__link">
-              My Projects
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="contact.html" class="nav__link nav__link--active">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <nav className="nav">
+      <ul className="nav__list">
+        <li className="nav__item">
+          <NavLink
+            style={({ isActive }) => ({ color: isActive && "red" })}
+            to="/"
+          >
+            Home
+          </NavLink>
+        </li>
+        <li className="nav__item">
+          <NavLink
+            styleName={({ isActive }) => ({ color: isActive && "red" })}
+            to="/about"
+          >
+            About
+          </NavLink>
+        </li>
+        <li className="nav__item">
+          <NavLink
+            styleName={({ isActive }) => ({ color: isActive && "red" })}
+            to="/projects"
+          >
+            Projects
+          </NavLink>
+        </li>
+        <li className="nav__item">
+          <NavLink
+            styleName={({ isActive }) => ({ color: isActive && "red" })}
+            to="/contact"
+          >
+            Contact
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 };
 
